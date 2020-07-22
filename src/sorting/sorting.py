@@ -9,7 +9,7 @@ def merge(arrA, arrB):
     while i_of_A < len(arrA) and i_of_B < len(arrB):
         #Add from Array A if we reached the end of Array B or 
         #the current item in Array A is smaller
-        if i_of_B == len(arrB) or arrA[i_of_A] <= arrB[i_of_B]:
+        if arrA[i_of_A] <= arrB[i_of_B]:
             merged_arr.append(arrA[i_of_A])
             i_of_A += 1
         #Otherwise add from Array B
@@ -21,9 +21,19 @@ def merge(arrA, arrB):
 # TO-DO: implement the Merge Sort function below recursively
 def merge_sort(arr):
     # Your code here
+    # split array until each array is size 1
+    # return value of size 1 array
+    # returned value will be merged with other array?
+    # return merged array?
+    if len(arr) == 1:
+        return arr
+    start = 0
+    end = len(arr)
+    mid = (start + end) // 2
 
+    sorted = merge(arr[start:mid], arr[mid+1:end])
 
-    return arr
+    return merge_sort(sorted)
 
 # STRETCH: implement the recursive logic for merge sort in a way that doesn't 
 # utilize any extra memory
@@ -31,8 +41,8 @@ def merge_sort(arr):
 # or data structures; it can only re-use the memory it was given as input
 def merge_in_place(arr, start, mid, end):
     # Your code here
-
+    pass
 
 def merge_sort_in_place(arr, l, r):
     # Your code here
-
+    pass
